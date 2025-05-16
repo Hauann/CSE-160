@@ -1,0 +1,66 @@
+<!-- Austin Yu -->
+<!-- aumyu@ucsc.edu -->
+
+<!-- Notes to Grader: -->
+<!-- The main folder contains asg0.html and asg0.js. -->
+<!-- The lib folder contains cuon-matrix.js and vectorTests.html. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Draw two vectors from input</title>
+</head>
+
+<body onload="main()">
+    <canvas id="example" width="400" height="400">
+        Please use a browser that supports "canvas"
+    </canvas>
+
+    <div style="margin-top: 10px;">
+        <div>
+            <label for="vector1">v1:</label>
+            <label for="xInput1">x</label>
+            <input type="number" id="xInput1" value="">
+            <label for="yInput1">y</label>
+            <input type="number" id="yInput1" value="">
+        </div>
+
+        <div>
+            <label for="vector2">v2:</label>
+            <label for="xInput2">x</label>
+            <input type="number" id="xInput2" value="">
+            <label for="yInput2">y</label>
+            <input type="number" id="yInput2" value="">
+        </div>
+
+        <div style="margin-top: 10px;">
+            <input type="button" value="Draw" onclick="handleDrawEvent()">
+        </div>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <label for="operationInput">Operation:</label>
+        <select id="operationSelector">
+            <option value="add">Add</option>
+            <option value="sub">Subtract</option>
+            <option value="mul">Multiply</option>
+            <option value="div">Divide</option>
+            <option value="angle">Angle Between</option>
+            <option value="area">Area</option>
+            <option value="magnitude">Magnitude</option>
+            <option value="normalize">Normalize</option>
+        </select>
+    
+        <label for="scalarInput">Scalar:</label>
+        <input type="number" id="scalarInput" value="">
+    
+        <input type="button" value="Draw" onclick="handleDrawOperationEvent()">
+    </div>
+
+    <script src="lib/cuon-matrix-cse160.js"></script>
+    <script src="asg0.js"></script>
+</body>
+
+</html>
