@@ -1,8 +1,7 @@
-import * as THREE from 'three';
-import { TextureLoader } from 'three';
-import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js';
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+import { OrbitControls } from 'https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js';
+import { MTLLoader } from 'https://unpkg.com/three@0.160.0/examples/jsm/loaders/MTLLoader.js';
+import { OBJLoader } from 'https://unpkg.com/three@0.160.0/examples/jsm/loaders/OBJLoader.js';
 
 // Create scene, camera, renderer
 const scene = new THREE.Scene();
@@ -28,7 +27,7 @@ controls.maxDistance = 50;
 controls.maxPolarAngle = Math.PI / 2;
 
 // Load texture for at least one shape
-const textureLoader = new TextureLoader();
+const textureLoader = new THREE.TextureLoader();
 const texture = textureLoader.load('brick_diffuse.jpg');
 
 // Arrays to hold objects
