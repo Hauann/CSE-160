@@ -7,7 +7,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 // Create scene, camera, renderer
 const scene = new THREE.Scene();
 const loader = new THREE.TextureLoader();
-loader.load('/textures/sky.jpg', (texture) => {
+loader.load('../../textures/sky.jpg', (texture) => {
     texture.mapping = THREE.EquirectangularReflectionMapping;
     scene.background = texture;
 });
@@ -29,7 +29,7 @@ controls.maxPolarAngle = Math.PI / 2;
 
 // Load texture for at least one shape
 const textureLoader = new TextureLoader();
-const texture = textureLoader.load('/brick_diffuse.jpg');
+const texture = textureLoader.load('../../brick_diffuse.jpg');
 
 // Arrays to hold objects
 const shapes = [];
@@ -147,14 +147,14 @@ window.addEventListener('resize', () => {
 
 // Load .obj with .mtl material
 const mtlLoader = new MTLLoader();
-mtlLoader.setPath('/models/');
+mtlLoader.setPath('../../models/');
 
 mtlLoader.load('Lowpoly_tree_sample.mtl', (materials) => {
     materials.preload();
 
     const objLoader = new OBJLoader();
     objLoader.setMaterials(materials);
-    objLoader.setPath('/models/');
+    objLoader.setPath('../../models/');
 
     objLoader.load('Lowpoly_tree_sample.obj', (object) => {
         object.scale.set(0.5, 0.5, 0.5);
